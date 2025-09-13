@@ -3,16 +3,16 @@
 
 if (file.exists("data/ObesityDataSet_raw_and_data_sinthetic.csv")) {
   obesity.data <- read.csv("data/ObesityDataSet_raw_and_data_sinthetic.csv")
-  cat("✓ Data loaded successfully from data folder\n")
+  cat("Data loaded successfully from data folder\n")
   View(obesity.data)
 } else if (file.exists("ObesityDataSet_raw_and_data_sinthetic.csv")) {
   # Fallback: check current directory
   obesity.data <- read.csv("ObesityDataSet_raw_and_data_sinthetic.csv")
-  cat("✓ Data loaded successfully from current directory\n")
+  cat("Data loaded successfully from current directory\n")
   View(obesity.data)
 } else {
-  # Help the user troubleshoot
-  cat("❌ Data file not found!\n")
+  # troubleshoot
+  cat("data file not found!\n")
   cat("Current working directory:", getwd(), "\n")
   cat("Files in current directory:", paste(list.files(), collapse = ", "), "\n")
   if (dir.exists("data")) {
